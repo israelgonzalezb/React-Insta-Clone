@@ -4,13 +4,17 @@ import "./App.css";
 import dummyData from "./dummy-data.js";
 import PostContainer from "./components/PostContainer/PostContainer.js";
 import SearchBar from "./components/SearchBar/SearchBar.js";
+import Bulma from "bulma";
+import { Container, Section } from 'react-bulma-components';
 
 function App() {
   return (
-    <div>
-    <SearchBar />
+    <Section>
+     <Container>
+      <SearchBar />
+      </Container>
       {dummyData.map(post=><PostContainer data={post}/>)}
-    </div>
+    </Section>
   );
 }
 
