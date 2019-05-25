@@ -7,13 +7,16 @@ import SearchBar from "./components/SearchBar/SearchBar.js";
 import Bulma from "bulma";
 import { Container, Section } from 'react-bulma-components';
 
+
+
+
 function App() {
   return (
     <Section>
      <Container>
       <SearchBar />
       </Container>
-      {dummyData.map(post=><PostContainer data={post}/>)}
+      {dummyData.map(post=>{return (<div><PostContainer data={post}/><br /></div>)})}
     </Section>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function CommentSection(props) {
   const comments = props.comments;
@@ -7,7 +8,12 @@ function CommentSection(props) {
       )
         
       )}
+       <input type="text" />
         </div>;
+}
+
+CommentSection.propTypes = {
+  comments: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default CommentSection;
