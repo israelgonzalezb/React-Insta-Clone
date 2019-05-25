@@ -5,18 +5,22 @@ import dummyData from "./dummy-data.js";
 import PostContainer from "./components/PostContainer/PostContainer.js";
 import SearchBar from "./components/SearchBar/SearchBar.js";
 import Bulma from "bulma";
-import { Container, Section } from 'react-bulma-components';
-
-
-
+import { Container, Section } from "bloomer";
 
 function App() {
   return (
     <Section>
-     <Container>
-      <SearchBar />
+      <Container>
+        <SearchBar />
       </Container>
-      {dummyData.map(post=>{return (<div><PostContainer data={post}/><br /></div>)})}
+      {dummyData.map(post => {
+        return (
+          <div>
+            <PostContainer data={post} />
+            <br />
+          </div>
+        );
+      })}
     </Section>
   );
 }

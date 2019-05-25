@@ -1,32 +1,49 @@
 import React from "react";
 import CommentSection from "../CommentSection/CommentSection.js";
-import { Image, Card, Media, Heading, Content } from "react-bulma-components";
+import {
+  Card,
+  Image,
+  CardContent,
+  MediaLeft,
+  Content,
+  CardHeaderTitle,
+  MediaRight,
+  Media,
+  MediaContent,
+  Title,
+  Field,
+  Label,
+  Control,
+  Input
+} from "bloomer";
+import Bulma from "bulma";
 import PropTypes from "prop-types";
-
-
 
 function PostContainer(props) {
   const data = props.data;
   return (
     <Card>
-      <Card.Image src={data.imageUrl} alt={`${data.username}'s post`} /><br />
-      <Card.Content>
+      <Image src={data.imageUrl} alt={`${data.username}'s post`} />
+      <br />
+      <CardContent>
         <Media>
-          <Media.Item renderAs="figure" position="left">
-            <Image renderAs="p" size={64} alt="64x64" src={data.thumbnailUrl} />
-          </Media.Item>
-          <Media.Item>
-            <Heading size={4}>{data.username}</Heading>
-          </Media.Item>
+          <MediaLeft>
+            <Image isSize="64x64" src={data.thumbnailUrl} />
+          </MediaLeft>
+          <MediaRight>
+            <MediaContent>
+              <Title isSize={5}>{data.username}</Title>
+            </MediaContent>
+          </MediaRight>
         </Media>
+
         <Content>
           Comments:
           <CommentSection comments={data.comments} />
           <br />
           <time dateTime={data.timestamp}>{data.timestamp}</time>
         </Content>
-      </Card.Content>
-      
+      </CardContent>
     </Card>
   );
 }
@@ -40,7 +57,6 @@ PostContainer.propTypes = {
     timestamp: PropTypes.string,
     comments: PropTypes.arrayOf(PropTypes.object)
   })
-  
-}
+};
 
 export default PostContainer;
