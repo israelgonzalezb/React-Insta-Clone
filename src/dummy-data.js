@@ -77,7 +77,7 @@ const dummyData = [
         text: "I like how Half Dome looks so old and useless"
       }
     ]
-  },
+  }/*,
   {
     username: "fmacgilrewy0",
     thumbnailUrl: "http://dummyimage.com/113x186.jpg/dddddd/000000",
@@ -11374,7 +11374,7 @@ const dummyData = [
           "consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis"
       }
     ]
-  }
+  }*/
 ];
 
 export default dummyData;
